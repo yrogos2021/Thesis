@@ -1,0 +1,129 @@
+% MS-Thesis
+\documentclass[11pt]{mvlthesis}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{verbatim,amssymb,amsmath,subfig,tabularx,ragged2e,booktabs}
+\usepackage{float}
+\usepackage{adjustbox}
+%\usepackage{wrapfig}
+%\usepackage{lscape}
+\usepackage{rotating}
+\usepackage{cite}
+\usepackage{url}
+\usepackage[breaklinks = true]{hyperref}
+\hypersetup{%
+  colorlinks = true,
+  linkcolor  = red
+}
+\usepackage{fancyvrb}
+\usepackage[]{mcode}
+%\usepackage{listings}
+%%%%%%%%%%%%%%%%%%%%% SET UP ALL THE TITLE PAGE VARIABLES %%%%%%%%%%%%%%%%%%
+
+\title{\scshape \mbox{Cognitive Radio Connectivity for}\\
+\scshape \mbox{Railway Transportation Networks}}
+
+\author{Kuldeep S. Gill}
+\thesis_or_diss{Thesis}
+\degree_type{Master of Science}
+\field{Electrical and Computer Engineering}
+\degreeyear{December 2017}
+\chair{Professor Alexander Wyglinski}
+\chairtitle{Major Advisor}
+\membertwo{Professor Kaveh Pahlavan}
+\memberthree{Dr. Travis Collins}
+
+
+%%%%%%%%%%%%%%%%%%%%%% INCLUDE USER DEFINED COMMANDS %%%%%%%%%%%%%%%%%%%%%%%
+\newcolumntype{L}{>{\RaggedRight\arraybackslash}X}
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ei}{\end{itemize}}
+\newcommand{\ii}{\item}
+\newcommand{\be}{\begin{enumerate}}
+\newcommand{\ee}{\end{enumerate}}
+\newcommand{\ie}{\item}
+\newcommand{\hv}{\mathbf{h}}
+\newcommand{\Hmat}{\mathbf{H}}
+\newcommand{\Emat}{\mathbf{E}}
+\newcommand{\Dmat}{\mathbf{D}}
+\newcommand{\ba}{\begin{align}}
+\newcommand{\ea}{\end{align}}
+
+\newcommand{\fig}[5]{
+    \begin{figure}[#1]
+    \begin{center}
+    \includegraphics[#2]{#3}
+    \end{center}
+    \caption{#4}
+    \label{#5}
+    \end{figure}
+}
+%%%%%%%%%%%%%% SPECIFY WHICH PARTS OF THE THESIS YOU WANT PRINTED %%%%%%%%%%
+
+\renewcommand{\baselinestretch}{1.5}
+
+\newcommand{\pderiv}[2]{\mbox{$\frac{\displaystyle \partial #1}{\displaystyle \partial #2}$}}
+
+%%%%%%%%%%%%%%%%%%%% Done with setup, document starts here %%%%%%%%%%%%%%%%%
+\begin{document}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TITLE + ABSTRACT %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\maketitle
+\begin{abstract}
+
+\input{abstract.tex}
+
+\end{abstract}
+
+%%%%%%%%%%%%%%%%%%%%%% ACKNOWLEDGMENTS + TABLE OF CONTENTS %%%%%%%%%%%%%%%%%
+\begin{frontmatter}
+\begin{acknowledgements}
+\begin{center}
+\vspace{0.4in}
+I would like to express my deepest gratitude to my advisor Professor Alexander Wyglinski for his continuous guidance and support towards my degree. I am very thankful for the opportunity to work with him in the Wireless Innovation Laboratory at Worcester Polytechnic Institute. 
+
+I want to thank Professor Kaveh Pahlavan and Dr. Travis Collins for serving on my committee and providing valuable suggestions and comments with regards to my thesis. 
+
+I would also like to thank my WILab team members Dr. Srikanth Pagadarai, Dr. Paulo Ferreira, Renato, Le for their immense support during my graduate studies. And I would also like to thank my friends Rasika, Devdip and Raunak for their constant emotional support. Finally, I'm also thankful to my parents, without their constant support I wouldn't be here.
+
+\end{center}
+\end{acknowledgements}
+
+%\begin{frontmatter}
+\tableofcontents
+\listoffigures
+\listoftables
+
+\end{frontmatter}
+
+%%%%%%%%%%%%%%%%%%%% INCLUDE THE REST OF THE DOCUMENT %%%%%%%%%%%%%%%%%%%%%%
+
+
+%\include{introduction}
+\input{introduction}
+
+%% Heterogeneous CSS intro
+\include{chapter2}
+
+%% LTE-R analysis intro
+\include{chapter3}
+
+%% Heterogeneous CSS Implementation..
+\include{chapter4}
+
+%% LTE-R Implementation..
+\include{chapter5}
+
+%% Conclusion..
+\include{conclusion}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% THE FINISH %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%SEE HERE for BIBTEX styles: http://www.cs.stir.ac.uk/~kjt/software/latex/showbst.html
+\bibliographystyle{IEEEtran}
+
+\bibliography{mybib}
+
+\appendix
+%\addtocontents{toc}{\protect\contentsline{chapter}{\protect\numberline{}Appendix:}{}{}}
+\include{appendixb}
+\include{appendixc}
+\end{document}
